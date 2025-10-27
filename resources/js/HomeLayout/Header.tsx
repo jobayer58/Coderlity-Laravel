@@ -759,19 +759,6 @@ const Header = () => {
                   <PiSignIn /> My Account
                 </Link>
               </Col>
-              {/* <Col xs="auto" className="apps-menu-wrapper" ref={dropdownRef}>
-                                <IoApps className="ioApps" onClick={toggleAppsMenu} />
-                                {showApps && (
-                                    <div className="apps-dropdown">
-                                        {appItems.map((app) => (
-                                            <div key={app.name} className="app-item">
-                                                <p className="app-item-icon">{app.icon}</p>
-                                                <p>{app.name}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </Col> */}
             </Row>
           </div>
         </Navbar.Collapse>

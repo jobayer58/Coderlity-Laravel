@@ -37,6 +37,8 @@ import icon6 from "../../images/frontend/icon6.png";
 import icon7 from "../../images/frontend/icon7.png";
 import icon8 from "../../images/frontend/icon8.png";
 import icon9 from "../../images/frontend/icon9.png";
+import scroll from "../../images/frontend/scrollDown.png"
+import scrollIcon from "../../images/frontend/scrolldownicon.png"
 
 // Define types for your dropdown system
 type DropdownName =
@@ -533,9 +535,8 @@ const Header = () => {
     return (
       <div
         ref={dropdownRefs[dropdownName]}
-        className={`services-dropdown-card ${
-          dropdownPosition === "right" ? "dropdown-right" : ""
-        }`}
+        className={`services-dropdown-card ${dropdownPosition === "right" ? "dropdown-right" : ""
+          }`}
         onMouseEnter={() => handleDropdownMouseEnter()}
         onMouseLeave={() => handleDropdownMouseLeave(dropdownName)}
       >
@@ -547,9 +548,8 @@ const Header = () => {
                   {data.map((item) => (
                     <div
                       key={item.id}
-                      className={`service-item ${
-                        hoveredItem?.id === item.id ? "active" : ""
-                      }`}
+                      className={`service-item ${hoveredItem?.id === item.id ? "active" : ""
+                        }`}
                       onMouseEnter={() =>
                         handleServiceHover(dropdownName, item)
                       }
@@ -641,9 +641,8 @@ const Header = () => {
             {/* Services */}
             <div
               ref={navItemRefs.services}
-              className={`services-dropdown-container ${
-                activeDropdown === "services" ? "active" : ""
-              }`}
+              className={`services-dropdown-container ${activeDropdown === "services" ? "active" : ""
+                }`}
               onMouseEnter={() => handleMouseEnter("services")}
               onMouseLeave={() => handleMouseLeave("services")}
             >
@@ -661,9 +660,8 @@ const Header = () => {
             {/* Products */}
             <div
               ref={navItemRefs.products}
-              className={`services-dropdown-container ${
-                activeDropdown === "products" ? "active" : ""
-              }`}
+              className={`services-dropdown-container ${activeDropdown === "products" ? "active" : ""
+                }`}
               onMouseEnter={() => handleMouseEnter("products")}
               onMouseLeave={() => handleMouseLeave("products")}
             >
@@ -681,9 +679,8 @@ const Header = () => {
             {/* Digital Marketing */}
             <div
               ref={navItemRefs.digitalMarketing}
-              className={`services-dropdown-container ${
-                activeDropdown === "digitalMarketing" ? "active" : ""
-              }`}
+              className={`services-dropdown-container ${activeDropdown === "digitalMarketing" ? "active" : ""
+                }`}
               onMouseEnter={() => handleMouseEnter("digitalMarketing")}
               onMouseLeave={() => handleMouseLeave("digitalMarketing")}
             >
@@ -702,9 +699,8 @@ const Header = () => {
             {/* Web Hosting */}
             <div
               ref={navItemRefs.webHosting}
-              className={`services-dropdown-container ${
-                activeDropdown === "webHosting" ? "active" : ""
-              }`}
+              className={`services-dropdown-container ${activeDropdown === "webHosting" ? "active" : ""
+                }`}
               onMouseEnter={() => handleMouseEnter("webHosting")}
               onMouseLeave={() => handleMouseLeave("webHosting")}
             >
@@ -723,9 +719,8 @@ const Header = () => {
             {/* Company */}
             <div
               ref={navItemRefs.company}
-              className={`services-dropdown-container ${
-                activeDropdown === "company" ? "active" : ""
-              }`}
+              className={`services-dropdown-container ${activeDropdown === "company" ? "active" : ""
+                }`}
               onMouseEnter={() => handleMouseEnter("company")}
               onMouseLeave={() => handleMouseLeave("company")}
             >
@@ -751,8 +746,8 @@ const Header = () => {
                         ? route("user.dashboard")
                         : route("user.dashboard.login")
                       : admin?.name != ""
-                      ? route("dashboard.home")
-                      : "#"
+                        ? route("dashboard.home")
+                        : "#"
                   }
                   className="accountBtn "
                 >
@@ -787,8 +782,8 @@ const Header = () => {
                       ? route("user.dashboard")
                       : route("user.dashboard.login")
                     : admin?.name != ""
-                    ? route("dashboard.home")
-                    : "#"
+                      ? route("dashboard.home")
+                      : "#"
                 }
                 className="accountBtn"
               >
@@ -892,6 +887,13 @@ const Header = () => {
                 <img src={icon9} alt="" />
               </div>
             </div>
+          </div>
+        </div>
+        <div className='scrollDown-div'>
+          <img src={scroll} alt="" />
+          <div className='scrollIcon-div'>
+            <img src={scrollIcon} alt="" />
+            <p className='scroll-text'>Scroll Down</p>
           </div>
         </div>
       </section>

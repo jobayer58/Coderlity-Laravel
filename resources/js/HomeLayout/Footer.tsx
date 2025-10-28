@@ -9,9 +9,38 @@ import massanger from "../../images/frontend/sms.png";
 import { IoMdArrowUp } from "react-icons/io";
 import trustReview from "../../images/frontend/trustreview.png";
 import trustPilot from "../../images/frontend/trustpilot.png";
+import scroll from '../../images/frontend/scrollUp.png'
+import scrollIcon from '../../images/frontend/scrollupicon.png'
 import { FaTwitter } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+    // Show button when page is scrolled down
+    const toggleVisibility = () => {
+        if (window.pageYOffset > 300) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
+    };
+
+    // Scroll to top smoothly
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisibility);
+
+        return () => {
+            window.removeEventListener('scroll', toggleVisibility);
+        };
+    }, []);
   return (
     <footer className="codarility-footer">
       <div className="footer-container">
@@ -22,9 +51,9 @@ const Footer = () => {
             <div>
               <img src={logo} alt="" />
               <p className="company-description">
-                Ignite digital success with our 360-Degree solution. <br/> We provide
-                everything from concept to design and <br/> development, domain and
-                hosting to marketing. <br/> Trust us as your partner in the journey to
+                Ignite digital success with our 360-Degree solution. <br /> We provide
+                everything from concept to design and <br /> development, domain and
+                hosting to marketing. <br /> Trust us as your partner in the journey to
                 your success.
               </p>
               <div className="footer-social">
@@ -278,14 +307,20 @@ const Footer = () => {
             © 2022 - 2025 All Right Reserved By Codarility
           </p>
           <div className="footer-coderlity">
-            <h1>coderlity</h1>
+            <h1>Coderlity</h1>
           </div>
           {/* messenger */}
           <div className="footer-social-sms-container">
             {/* Arrow up */}
-            <div className="footer-Arrow">
-              <div className="Arrow-div">
-                <IoMdArrowUp className="arrow-icon" />
+            <div
+              className={`scrollUp-div ${isVisible ? '' : 'hidden'}`}
+              onClick={scrollToTop}
+              style={{ cursor: 'pointer' }}
+            >
+              <img src={scroll} alt="Scroll background" />
+              <div className='scrollIcon-up'>
+                <img src={scrollIcon} alt="Scroll to top" />
+                <p className='scroll-text-up'>Scroll Up</p>
               </div>
             </div>
             {/* 3 */}
